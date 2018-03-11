@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    compile group: 'com.github.igor-suhorukov', name: 'instagramscraper', version: '2.0'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = 'App'
+
