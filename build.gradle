@@ -8,7 +8,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-// apply plugin: 'application'
+apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -28,7 +28,7 @@ targetCompatibility = 1.8
 
 dependencies {
     compile 'com.google.guava:guava:23.0'
-    compile group: 'com.github.igor-suhorukov', name: 'instagramscraper', version: '2.0'
+    compile group: 'com.github.igor-suhorukov', name: 'instagramscraper', version: '2.2'
     compile("org.springframework.boot:spring-boot-starter-web")
     compileOnly 'org.projectlombok:lombok:1.16.18'
     
@@ -36,5 +36,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-// mainClassName = 'App'
+mainClassName = 'App'
 
